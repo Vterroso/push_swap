@@ -3,6 +3,15 @@
 
 #include "../libft/libft.h"
 #include<limits.h>
-#include
+
+typedef struct s_stack
+{
+    int             index;
+    int             value;
+    struct s_stack  *next;
+}                   t_stack;
+
+void    ft_error(void);
+void ft_check_args(int ac, char **av);
 
 #endif
