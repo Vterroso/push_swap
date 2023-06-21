@@ -13,5 +13,6 @@ typedef struct s_stack
 
 void    ft_error(void);
 void ft_check_args(int ac, char **av);
+int is_sorted(t_stack *stack);
 
 #endif
