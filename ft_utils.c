@@ -9,7 +9,7 @@ void ft_print_stack(t_stack *stack)
     }
 }
 
-int ft__stacklen(t_stack *stack)
+int ft_stacklen(t_stack *stack)
 {
     int len;
 
@@ -22,7 +22,7 @@ int ft__stacklen(t_stack *stack)
     return (len);
 }
 
-int ft__min(int *arr, int len)
+int ft_min(int *arr, int len)
 {
     int min;
     int i;
@@ -38,7 +38,7 @@ int ft__min(int *arr, int len)
     return (min);
 }
 
-int ft__max(int *arr, int len)
+int ft_max(int *arr, int len)
 {
     int max;
     int i;

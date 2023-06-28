@@ -1,7 +1,7 @@
 #include "push_swap.h"
 
 
-void ft__pa(t_stack **stack_a, t_stack **stack_b)
+void ft_pa(t_stack **stack_a, t_stack **stack_b)
 {
     t_stack *tmp;
 
@@ -13,7 +13,7 @@ void ft__pa(t_stack **stack_a, t_stack **stack_b)
     *stack_a = tmp;
 }
 
-void ft__pb(t_stack **stack_a, t_stack **stack_b)
+void ft_pb(t_stack **stack_a, t_stack **stack_b)
 {
     t_stack *tmp;
 

@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void ft__ra(t_stack **stack_a)
+void ft_ra(t_stack **stack_a)
 {
     t_stack *tmp;
     t_stack *first;
@@ -16,7 +16,7 @@ void ft__ra(t_stack **stack_a)
     first->next = NULL;
 }
 
-void ft__rb(t_stack **stack_b)
+void ft_rb(t_stack **stack_b)
 {
     t_stack *tmp;
     t_stack *first;
@@ -32,8 +32,8 @@ void ft__rb(t_stack **stack_b)
     first->next = NULL;
 }
 
-void ft__rr(t_stack **stack_a, t_stack **stack_b)
+void ft_rr(t_stack **stack_a, t_stack **stack_b)
 {
-    ft__ra(stack_a);
-    ft__rb(stack_b);
+    ft_ra(stack_a);
+    ft_rb(stack_b);
 }
