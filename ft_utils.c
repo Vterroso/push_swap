@@ -4,7 +4,7 @@ void ft_print_stack(t_stack *stack)
 {
     while (stack)
     {
-        ft_printf("%d\n", stack->value);
+        printf("%d\n", stack->value);
         stack = stack->next;
     }
 }

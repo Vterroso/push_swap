@@ -5,12 +5,26 @@ static int ft_isrepeat(int i, long tmp, char **args)
     i++;
     while(args[i])
     {
-        if (tmp = ft_atoi(args[i]))
+        if (tmp == ft_atoi(args[i]))
             return(1);
         i++;
 
     }
     return(0);    
+}
+
+static int ft_isnum(char *str)
+{
+    int i;
+
+    i = 0;
+    while(str[i])
+    {
+        if (!ft_isdigit(str[i]) && str[i] != '-')
+            return(0);
+        i++;
+    }
+    return(1);
 }
 
 void ft_check_args(int ac, char **av)
@@ -30,11 +44,11 @@ void ft_check_args(int ac, char **av)
     while(args[i])
     {
         tmp = ft_atoi(args[i]);
-        if(!ft_isalnum)
+        if (!ft_isnum(args[i]) == 0)
             ft_error();
         else if (tmp < INT_MIN || tmp > INT_MAX)
             ft_error();
-        else if (ft_isrepeat)
+        else if (ft_isrepeat(i, tmp, args))
             ft_error();
         i++;
     }
