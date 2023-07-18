@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 12:31:26 by vterroso          #+#    #+#             */
-/*   Updated: 2023/06/29 15:57:09 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/07/17 18:47:44 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ typedef struct s_stack
     int             value;
     struct s_stack  *next;
 }                   t_stack;
-
+void	ft_lstclear(t_stack **lst);
+void	ft_lstdelone(t_stack *lst);
 void    ft_error(void);
 void ft_check_args(int ac, char **av);
 int is_sorted(t_stack *stack);
 void ft_add_stack(t_stack **stack, int ac, char **av);
-void ft_free(t_stack **stack);
 void ft_sort(t_stack **stack_a, t_stack **stack_b);
 int ft_stacklen(t_stack *stack);
 int ft_min(int *arr, int len);

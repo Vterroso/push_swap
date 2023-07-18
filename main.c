@@ -14,6 +14,8 @@ int main(int ac, char **av)
     if (is_sorted(stack_a))
         return (0);
     ft_sort(&stack_a, &stack_b);
+    ft_lstclear(&stack_a);
+    ft_lstclear(&stack_b);
     
     return (0);
 }

@@ -3,28 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vterroso <vterroso@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 19:07:15 by vterroso          #+#    #+#             */
-/*   Updated: 2023/03/27 12:07:24 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/07/17 11:40:33 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_stack **lst)
 {
-	t_list	*current;
-	t_list	*next;
+	t_stack	*current;
+	t_stack	*next;
 
-	if (!lst || !*lst || !del)
+	if (!lst)
 		return ;
 	current = *lst;
+	if (!current)
+		return ;
 	while (current)
 	{
 		next = current->next;
-		(*del)(current->content);
-		free(current);
+		ft_lstdelone(current);
 		current = next;
 	}
 	*lst = NULL;

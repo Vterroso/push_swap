@@ -44,12 +44,21 @@ void ft_check_args(int ac, char **av)
     while(args[i])
     {
         tmp = ft_atoi(args[i]);
-        if (!ft_isnum(args[i]) == 0)
+        if (ft_isnum(args[i]) == 0)
+        {
+            printf("Error isnum\n");
             ft_error();
-        else if (tmp < INT_MIN || tmp > INT_MAX)
+        }
+        else if (tmp < INT_MIN || tmp > INT_MAX){
+            printf("Error minmax\n");
             ft_error();
-        else if (ft_isrepeat(i, tmp, args))
+        }
+        else if (ft_isrepeat(i, tmp, args)){
+            printf("Error isrepeat\n");
             ft_error();
+        }
         i++;
     }
+    if (ac == 2)
+        free(args);
 }

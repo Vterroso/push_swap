@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vterroso <vterroso@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 17:57:46 by vterroso          #+#    #+#             */
-/*   Updated: 2023/03/23 18:43:55 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/07/17 11:39:55 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_stack *lst)
 {
-	if (!lst || !del)
+	if (!lst)
 		return ;
-	(*del)(lst->content);
-	free(lst);
+	if (lst)
+		free(lst);
 }

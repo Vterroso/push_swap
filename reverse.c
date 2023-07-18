@@ -14,6 +14,7 @@ void ft_rra(t_stack **stack_a)
     tmp->next = NULL;
     last->next = *stack_a;
     *stack_a = last;
+    ft_putstr_fd("rra\n", 1);
 }
 
 void ft_rrb(t_stack **stack_b)
@@ -30,10 +31,12 @@ void ft_rrb(t_stack **stack_b)
     tmp->next = NULL;
     last->next = *stack_b;
     *stack_b = last;
+    ft_putstr_fd("rrb\n", 1);
 }
 
 void ft_rrr(t_stack **stack_a, t_stack **stack_b)
 {
     ft_rra(stack_a);
     ft_rrb(stack_b);
+    ft_putstr_fd("rrr\n", 1);
 }
