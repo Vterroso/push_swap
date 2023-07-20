@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_check_args.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/19 17:57:59 by vterroso          #+#    #+#             */
+/*   Updated: 2023/07/19 17:58:04 by vterroso         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int ft_isrepeat(int i, long tmp, char **args)
@@ -45,18 +57,11 @@ void ft_check_args(int ac, char **av)
     {
         tmp = ft_atoi(args[i]);
         if (ft_isnum(args[i]) == 0)
-        {
-            printf("Error isnum\n");
             ft_error();
-        }
-        else if (tmp < INT_MIN || tmp > INT_MAX){
-            printf("Error minmax\n");
+        else if (tmp < INT_MIN || tmp > INT_MAX)
             ft_error();
-        }
-        else if (ft_isrepeat(i, tmp, args)){
-            printf("Error isrepeat\n");
+        else if (ft_isrepeat(i, tmp, args))
             ft_error();
-        }
         i++;
     }
     if (ac == 2)

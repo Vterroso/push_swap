@@ -1,5 +1,5 @@
 NAME 	= 	push_swap
-CC		=	gcc
+CC		=	gcc -g
 CFLAGS	=	-c -Wall -Werror -Wextra
 RM		=	rm -f
 SRCS	=	ft_add_stack.c ft_check_args.c ft_error.c ft_sort.c ft_utils.c is_sorted.c \

@@ -1,56 +1,127 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/19 17:58:29 by vterroso          #+#    #+#             */
+/*   Updated: 2023/07/19 17:58:31 by vterroso         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
+
+void ft_sort_three(t_stack **stack_a)
+{
+    int a;
+    int b;
+    int c;
+
+    a = (*stack_a)->value;
+    b = (*stack_a)->next->value;
+    c = (*stack_a)->next->next->value;
+    if (a > b && b < c && a < c)
+        ft_sa(stack_a);
+    else if (a > b && b > c && a > c)
+    {
+        ft_sa(stack_a);
+        ft_rra(stack_a);
+    }
+    else if (a > b && b < c && a > c)
+        ft_ra(stack_a);
+    else if (a < b && b > c && a < c)
+    {
+        ft_sa(stack_a);
+        ft_ra(stack_a);
+    }
+    else if (a < b && b > c && a > c)
+        ft_rra(stack_a);
+}
+
+void ft_sort_four(t_stack **stack_a, t_stack **stack_b)
+{
+    int min;
+    int max;
+
+    min = ft_min(*stack_a, ft_stacklen(*stack_a));
+    max = ft_max(*stack_a, ft_stacklen(*stack_a));
+    while ((*stack_a)->value != min && (*stack_a)->value != max)
+        ft_ra(stack_a);
+    if ((*stack_a)->value == min)
+        ft_pb(stack_a, stack_b);
+    else
+    {
+        ft_sa(stack_a);
+        ft_pb(stack_a, stack_b);
+    }
+    ft_sort_three(stack_a);
+    ft_pa(stack_a, stack_b);
+}
+
+void ft_sort_five(t_stack **stack_a, t_stack **stack_b)
+{
+    int min;
+    int max;
+
+    min = ft_min(*stack_a, ft_stacklen(*stack_a));
+    max = ft_max(*stack_a, ft_stacklen(*stack_a));
+    while ((*stack_a)->value != min && (*stack_a)->value != max)
+        ft_ra(stack_a);
+    if ((*stack_a)->value == min)
+        ft_pb(stack_a, stack_b);
+    else
+    {
+        ft_sa(stack_a);
+        ft_pb(stack_a, stack_b);
+    }
+    ft_sort_four(stack_a, stack_b);
+    ft_pa(stack_a, stack_b);
+}
+
+void ft_radix_sort(t_stack **stack_a, t_stack **stack_b)
+{
+    int i;
+    int j;
+    int len;
+    int min;
+    int max;
+
+    i = 0;
+    len = ft_stacklen(*stack_a);
+    min = ft_min(*stack_a, len);
+    max = ft_max(*stack_a, len);
+    while (i < len)
+    {
+        j = 0;
+        while (j < len)
+        {
+            if ((*stack_a)->value >= min && (*stack_a)->value <= max)
+                ft_pb(stack_a, stack_b);
+            else
+                ft_ra(stack_a);
+            j++;
+        }
+        while (*stack_b)
+            ft_pa(stack_a, stack_b);
+        i++;
+    }
+}
+
 
 void ft_sort(t_stack **stack_a, t_stack **stack_b)
 {
     int len;
-    int i;
-    int j;
-    int min;
-    int max;
-    int mid;
-    int *arr;
 
     len = ft_stacklen(*stack_a);
-    arr = malloc(sizeof(int) * len);
-    if (!arr)
-        ft_error();
-    i = 0;
-    while (i < len)
-    {
-        arr[i] = (*stack_a)->value;
-        *stack_a = (*stack_a)->next;
-        i++;
-    }
-    min = ft_min(arr, len);
-    max = ft_max(arr, len);
-    mid = (min + max) / 2;
-    i = 0;
-    while (i < len)
-    {
-        if (arr[i] <= mid)
-        {
-            ft_pb(stack_a, stack_b);
-            i++;
-        }
-        else
-        {
-            ft_ra(stack_a);
-            i++;
-        }
-    }
-    j = 0;
-    while (j < len)
-    {
-        if ((*stack_b)->value < mid)
-        {
-            ft_pa(stack_a, stack_b);
-            j++;
-        }
-        else
-        {
-            ft_rb(stack_b);
-            j++;
-        }
-    }
-    free(arr);
+    if (len == 2)
+        ft_sa(stack_a);
+    else if (len == 3)
+        ft_sort_three(stack_a);
+    else if (len == 4)
+        ft_sort_four(stack_a, stack_b);
+    else if (len == 5)
+        ft_sort_five(stack_a, stack_b);
+    else
+        ft_radix_sort(stack_a, stack_b);
 }
