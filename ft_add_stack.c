@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:57:42 by vterroso          #+#    #+#             */
-/*   Updated: 2023/07/19 17:57:48 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/09/06 18:42:08 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void ft_add_stack(t_stack **stack, int ac, char **av)
         if (!new)
             ft_error();
         new->value = ft_atoi(av[i]);
-        new->index = i;
+        new->index = -1;
         new->next = NULL;
         if (!*stack)
             *stack = new;

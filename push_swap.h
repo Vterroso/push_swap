@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 12:31:26 by vterroso          #+#    #+#             */
-/*   Updated: 2023/09/06 13:32:39 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/09/06 18:20:36 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,5 @@ void ft_rrr(t_stack **stack_a, t_stack **stack_b);
 void ft_print_stack(t_stack *stack);
 t_stack *ft_find_min(t_stack **lst);
 void ft_simplify(t_stack **lst);
-int ft_digits(int n);
 
 #endif
