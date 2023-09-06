@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:58:09 by vterroso          #+#    #+#             */
-/*   Updated: 2023/07/20 13:53:02 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/07/24 13:32:57 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void    ft_error(void)
 {
-    ft_putstr_fd("Error\n", 1););
+    ft_putstr_fd("Error\n", 1);
     exit (0);
 }
 

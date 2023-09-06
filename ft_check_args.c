@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:57:59 by vterroso          #+#    #+#             */
-/*   Updated: 2023/07/19 17:58:04 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/09/05 18:14:19 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ static int ft_isnum(char *str)
     i = 0;
     while(str[i])
     {
-        if (!ft_isdigit(str[i]) && str[i] != '-')
+        if (str[i] == '-' && i == 0)
+            i++;
+        if (!ft_isdigit(str[i]))
             return(0);
         i++;
     }

@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:58:29 by vterroso          #+#    #+#             */
-/*   Updated: 2023/07/19 17:58:31 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/09/06 12:01:42 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,17 +44,17 @@ void ft_sort_four(t_stack **stack_a, t_stack **stack_b)
     int min;
     int max;
 
+while(ft_stacklen(*stack_a) > 3)
+{
     min = ft_min(*stack_a, ft_stacklen(*stack_a));
     max = ft_max(*stack_a, ft_stacklen(*stack_a));
-    while ((*stack_a)->value != min && (*stack_a)->value != max)
+    if ((*stack_a)->value == max)
         ft_ra(stack_a);
-    if ((*stack_a)->value == min)
+    else if ((*stack_a)->value == min)
         ft_pb(stack_a, stack_b);
     else
-    {
-        ft_sa(stack_a);
-        ft_pb(stack_a, stack_b);
-    }
+        ft_ra(stack_a);
+}
     ft_sort_three(stack_a);
     ft_pa(stack_a, stack_b);
 }
@@ -62,18 +62,14 @@ void ft_sort_four(t_stack **stack_a, t_stack **stack_b)
 void ft_sort_five(t_stack **stack_a, t_stack **stack_b)
 {
     int min;
-    int max;
 
-    min = ft_min(*stack_a, ft_stacklen(*stack_a));
-    max = ft_max(*stack_a, ft_stacklen(*stack_a));
-    while ((*stack_a)->value != min && (*stack_a)->value != max)
-        ft_ra(stack_a);
-    if ((*stack_a)->value == min)
-        ft_pb(stack_a, stack_b);
-    else
+    while (ft_stacklen(*stack_a) > 4)
     {
-        ft_sa(stack_a);
-        ft_pb(stack_a, stack_b);
+        min = ft_min(*stack_a, ft_stacklen(*stack_a));
+        if ((*stack_a)->value == min)
+            ft_pb(stack_a, stack_b);
+        else
+            ft_ra(stack_a);
     }
     ft_sort_four(stack_a, stack_b);
     ft_pa(stack_a, stack_b);
@@ -83,32 +79,29 @@ void ft_radix_sort(t_stack **stack_a, t_stack **stack_b)
 {
     int i;
     int j;
-    int len;
-    int min;
-    int max;
+    int size;
+    int digits;
 
+    ft_simplify(stack_a);
     i = 0;
-    len = ft_stacklen(*stack_a);
-    min = ft_min(*stack_a, len);
-    max = ft_max(*stack_a, len);
-    while (i < len)
+    size = ft_stacklen(*stack_a);
+    digits = ft_digits(size);
+    while (i <= digits)
     {
         j = 0;
-        while (j < len)
+        while (j < size)
         {
-            if ((*stack_a)->value >= min && (*stack_a)->value <= max)
-                ft_pb(stack_a, stack_b);
-            else
+            if (((*stack_a)->index >> i) & 1)
                 ft_ra(stack_a);
+            else
+                ft_pb(stack_a, stack_b);
             j++;
         }
-        while (*stack_b)
+        while (ft_stacklen(*stack_b))
             ft_pa(stack_a, stack_b);
         i++;
     }
 }
-
-
 void ft_sort(t_stack **stack_a, t_stack **stack_b)
 {
     int len;
@@ -123,5 +116,8 @@ void ft_sort(t_stack **stack_a, t_stack **stack_b)
     else if (len == 5)
         ft_sort_five(stack_a, stack_b);
     else
+    {
+        ft_simplify(stack_a);
         ft_radix_sort(stack_a, stack_b);
+    }
 }

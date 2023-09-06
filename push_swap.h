@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 12:31:26 by vterroso          #+#    #+#             */
-/*   Updated: 2023/07/19 17:28:38 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/09/06 12:38:19 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_stack
 void	ft_lstclear(t_stack **lst);
 void	ft_lstdelone(t_stack *lst);
 void    ft_error(void);
+void ft_free(t_stack **stack_a, t_stack **stack_b);
 void ft_check_args(int ac, char **av);
 int is_sorted(t_stack *stack);
 void ft_add_stack(t_stack **stack, int ac, char **av);
@@ -49,6 +50,8 @@ void ft_rra(t_stack **stack);
 void ft_rrb(t_stack **stack);
 void ft_rrr(t_stack **stack_a, t_stack **stack_b);
 void ft_print_stack(t_stack *stack);
-
+t_stack *find_min(t_stack **lst);
+void ft_simplify(t_stack **lst);
+int ft_digits(int n);
 
 #endif

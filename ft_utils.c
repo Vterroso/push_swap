@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:58:36 by vterroso          #+#    #+#             */
-/*   Updated: 2023/07/19 17:58:38 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/09/05 18:47:20 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,3 +67,20 @@ int ft_max(t_stack *stack, int len)
     }
     return (max);
 }
+
+int ft_digits(int n)
+{
+    int i;
+
+    i = 1;
+    while (n > 9)
+    {
+        n /= 10;
+        i++;
+    }
+    return (i);
+}
+
+
+
+
