@@ -6,13 +6,13 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:12:14 by vterroso          #+#    #+#             */
-/*   Updated: 2023/09/06 12:41:24 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/09/06 13:33:27 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack *find_min(t_stack **lst)
+t_stack *ft_find_min(t_stack **lst)
 {
     t_stack *min;
     t_stack *tmp;
@@ -39,11 +39,11 @@ void ft_simplify(t_stack **lst)
     t_stack *tmp;
 
     i = 0;
-    tmp = find_min(lst);
+    tmp = ft_find_min(lst);
     while (tmp)
     {
         tmp->index = i;
-        tmp = find_min(lst);
+        tmp = ft_find_min(lst);
         i++;
     }
 }

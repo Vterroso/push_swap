@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:58:29 by vterroso          #+#    #+#             */
-/*   Updated: 2023/09/06 12:01:42 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/09/06 16:20:05 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,24 +80,21 @@ void ft_radix_sort(t_stack **stack_a, t_stack **stack_b)
     int i;
     int j;
     int size;
-    int digits;
 
     ft_simplify(stack_a);
     i = 0;
     size = ft_stacklen(*stack_a);
-    digits = ft_digits(size);
-    while (i <= digits)
+    while (!is_sorted(*stack_a))
     {
         j = 0;
-        while (j < size)
+        while (j++ < size)
         {
-            if (((*stack_a)->index >> i) & 1)
+            if (((*stack_a)->index >> i & 1) == 1)
                 ft_ra(stack_a);
             else
                 ft_pb(stack_a, stack_b);
-            j++;
         }
-        while (ft_stacklen(*stack_b))
+        while (ft_stacklen(*stack_b) != 0)
             ft_pa(stack_a, stack_b);
         i++;
     }
