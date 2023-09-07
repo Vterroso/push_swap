@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:57:59 by vterroso          #+#    #+#             */
-/*   Updated: 2023/09/07 14:48:15 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/09/07 15:53:32 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int ft_isrepeat(int i, long tmp, char **args)
     i++;
     while(args[i])
     {
-        if (tmp == ft_atoi(args[i]))
+        if (tmp == ft_atol(args[i]))
             return(1);
         i++;
 

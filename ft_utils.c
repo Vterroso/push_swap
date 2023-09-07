@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:58:36 by vterroso          #+#    #+#             */
-/*   Updated: 2023/09/07 15:45:04 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/09/07 15:56:49 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,11 @@ long ft_max(t_stack *stack, int len)
     return (max);
 }
 
-long	gitft_atol(const char *str)
+long	ft_atol(const char *str)
 {
-	int	res;
+	long	    res;
 	long		sign;
-	long		i;
+	int		i;
 
 	i = 0;
 	res = 0;
