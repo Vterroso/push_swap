@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 12:31:26 by vterroso          #+#    #+#             */
-/*   Updated: 2023/09/06 18:20:36 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/09/07 14:58:31 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 typedef struct s_stack
 {
     int             index;
-    int             value;
+    long             value;
     struct s_stack  *next;
 }                   t_stack;
 void	ft_lstclear(t_stack **lst);
@@ -36,8 +36,9 @@ void ft_sort_four(t_stack **stack_a, t_stack **stack_b);
 void ft_sort_five(t_stack **stack_a, t_stack **stack_b);
 void ft_radix_sort(t_stack **stack_a, t_stack **stack_b);
 int ft_stacklen(t_stack *stack);
-int ft_min(t_stack *stack, int len);
-int ft_max(t_stack *stack, int len);
+long ft_min(t_stack *stack, int len);
+long ft_max(t_stack *stack, int len);
+long	ft_atol(const char *str);
 void ft_sa(t_stack **stack);
 void ft_sb(t_stack **stack);
 void ft_ss(t_stack **stack_a, t_stack **stack_b);

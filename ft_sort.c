@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:58:29 by vterroso          #+#    #+#             */
-/*   Updated: 2023/09/06 18:42:32 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/09/07 14:57:33 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void ft_sort_three(t_stack **stack_a)
 {
-    int a;
-    int b;
-    int c;
+    long a;
+    long b;
+    long c;
 
     a = (*stack_a)->value;
     b = (*stack_a)->next->value;
@@ -41,8 +41,8 @@ void ft_sort_three(t_stack **stack_a)
 
 void ft_sort_four(t_stack **stack_a, t_stack **stack_b)
 {
-    int min;
-    int max;
+    long min;
+    long max;
 
 while(ft_stacklen(*stack_a) > 3)
 {
@@ -61,7 +61,7 @@ while(ft_stacklen(*stack_a) > 3)
 
 void ft_sort_five(t_stack **stack_a, t_stack **stack_b)
 {
-    int min;
+    long min;
 
     while (ft_stacklen(*stack_a) > 4)
     {

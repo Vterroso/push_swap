@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:57:59 by vterroso          #+#    #+#             */
-/*   Updated: 2023/09/05 18:14:19 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/09/07 14:48:15 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void ft_check_args(int ac, char **av)
         }
     while(args[i])
     {
-        tmp = ft_atoi(args[i]);
+        tmp = ft_atol(args[i]);
         if (ft_isnum(args[i]) == 0)
             ft_error();
         else if (tmp < INT_MIN || tmp > INT_MAX)
