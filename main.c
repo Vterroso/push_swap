@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:58:47 by vterroso          #+#    #+#             */
-/*   Updated: 2023/09/13 18:38:55 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/09/13 19:13:48 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,6 @@ int	main(int ac, char **av)
 	ft_add_stack(&stack_a, ac, av);
 	if (is_sorted(stack_a))
 		exit(1);
-/* 	{
-		ft_lstclear_stack(&stack_a);
-		ft_lstclear_stack(&stack_b);
-		ft_free(&stack_a, &stack_b);
-		return (0);
-	} */
 	ft_sort(&stack_a, &stack_b);
 	ft_lstclear_stack(&stack_a);
 	ft_lstclear_stack(&stack_b);

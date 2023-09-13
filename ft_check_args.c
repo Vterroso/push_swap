@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:57:59 by vterroso          #+#    #+#             */
-/*   Updated: 2023/09/13 18:49:47 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/09/13 19:10:55 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,8 @@ void	ft_check_args(int ac, char **av)
 	long	tmp;
 	char	**args;
 
-	i = 0;
-	if (ac == 2)
-		args = ft_split(av[1], ' ');
-	else
-	{
-		i = 1;
-		args = av;
-	}
+	i = 1;
+	args = av;
 	while (args[i])
 	{
 		tmp = ft_atol(args[i]);
