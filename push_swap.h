@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 12:31:26 by vterroso          #+#    #+#             */
-/*   Updated: 2023/09/13 12:21:27 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/09/13 16:06:01 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ typedef struct s_stack
 	long			value;
 	struct s_stack	*next;
 }					t_stack;
-void				ft_lstclear(t_stack **lst);
-void				ft_lstdelone(t_stack *lst);
+void				ft_lstclear_stack(t_stack **lst);
+void				ft_lstdelone_stack(t_stack *lst);
+t_stack				*ft_lstlast_stack(t_stack *lst);
 void				ft_error(void);
 void				ft_free(t_stack **stack_a, t_stack **stack_b);
 void				ft_check_args(int ac, char **av);

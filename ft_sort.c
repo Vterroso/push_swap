@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:58:29 by vterroso          #+#    #+#             */
-/*   Updated: 2023/09/13 12:39:52 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/09/13 16:16:44 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,14 @@ void	ft_sort_three(t_stack **stack_a)
 void	ft_sort_four(t_stack **stack_a, t_stack **stack_b)
 {
 	long	min;
-	long	max;
 
 	while (ft_stacklen(*stack_a) > 3)
 	{
 		min = ft_min(*stack_a, ft_stacklen(*stack_a));
-		max = ft_max(*stack_a, ft_stacklen(*stack_a));
-		if ((*stack_a)->value == max)
-			ft_ra(stack_a);
-		else if ((*stack_a)->value == min)
+		if ((*stack_a)->value == min)
 			ft_pb(stack_a, stack_b);
+		else if ((ft_lstlast_stack(*stack_a)->value) == min)
+			ft_rra(stack_a);
 		else
 			ft_ra(stack_a);
 	}
@@ -68,6 +66,8 @@ void	ft_sort_five(t_stack **stack_a, t_stack **stack_b)
 		min = ft_min(*stack_a, ft_stacklen(*stack_a));
 		if ((*stack_a)->value == min)
 			ft_pb(stack_a, stack_b);
+		else if ((ft_lstlast_stack(*stack_a)->value) == min)
+			ft_rra(stack_a);
 		else
 			ft_ra(stack_a);
 	}
