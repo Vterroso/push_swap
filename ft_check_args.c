@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:57:59 by vterroso          #+#    #+#             */
-/*   Updated: 2023/09/13 12:20:36 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/09/13 18:48:50 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,5 @@ void	ft_check_args(int ac, char **av)
 		i++;
 	}
 	if (ac == 2)
-		free(args);
+		exit(1);
 }

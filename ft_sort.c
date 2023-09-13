@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:58:29 by vterroso          #+#    #+#             */
-/*   Updated: 2023/09/13 16:16:44 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/09/13 17:22:46 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ void	ft_radix_sort(t_stack **stack_a, t_stack **stack_b)
 	int	j;
 	int	size;
 
-	ft_simplify(stack_a);
 	i = 0;
 	size = ft_stacklen(*stack_a);
 	while (!is_sorted(*stack_a))
