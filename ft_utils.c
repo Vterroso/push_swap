@@ -6,73 +6,72 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:58:36 by vterroso          #+#    #+#             */
-/*   Updated: 2023/09/07 15:56:49 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/09/13 12:21:44 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_print_stack(t_stack *stack)
+void	ft_print_stack(t_stack *stack)
 {
-    while (stack)
-    {
-        printf("index:%d value:%ld\n", stack->index, stack->value);
-        
-        stack = stack->next;
-    }
+	while (stack)
+	{
+		printf("index:%d value:%ld\n", stack->index, stack->value);
+		stack = stack->next;
+	}
 }
 
-int ft_stacklen(t_stack *stack)
+int	ft_stacklen(t_stack *stack)
 {
-    int len;
+	int	len;
 
-    len = 0;
-    while (stack)
-    {
-        len++;
-        stack = stack->next;
-    }
-    return (len);
+	len = 0;
+	while (stack)
+	{
+		len++;
+		stack = stack->next;
+	}
+	return (len);
 }
 
-long ft_min(t_stack *stack, int len)
+long	ft_min(t_stack *stack, int len)
 {
-    long min;
-    int i;
+	long	min;
+	int		i;
 
-    min = stack->value;
-    i = 1;
-    while (i < len)
-    {
-        if (stack->next->value < min)
-            min = stack->next->value;
-        stack = stack->next;
-        i++;
-    }
-    return (min);
+	min = stack->value;
+	i = 1;
+	while (i < len)
+	{
+		if (stack->next->value < min)
+			min = stack->next->value;
+		stack = stack->next;
+		i++;
+	}
+	return (min);
 }
 
-long ft_max(t_stack *stack, int len)
+long	ft_max(t_stack *stack, int len)
 {
-    long max;
-    int i;
+	long	max;
+	int		i;
 
-    max = stack->value;
-    i = 1;
-    while (i < len)
-    {
-        if (stack->next->value > max)
-            max = stack->next->value;
-        stack = stack->next;
-        i++;
-    }
-    return (max);
+	max = stack->value;
+	i = 1;
+	while (i < len)
+	{
+		if (stack->next->value > max)
+			max = stack->next->value;
+		stack = stack->next;
+		i++;
+	}
+	return (max);
 }
 
 long	ft_atol(const char *str)
 {
-	long	    res;
-	long		sign;
+	long	res;
+	long	sign;
 	int		i;
 
 	i = 0;
@@ -91,7 +90,3 @@ long	ft_atol(const char *str)
 	}
 	return (res * sign);
 }
-
-
-
-
