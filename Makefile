@@ -3,7 +3,7 @@ CC		=	gcc -g
 CFLAGS	=	-c -Wall -Werror -Wextra
 RM		=	rm -f
 SRCS	=	ft_add_stack.c ft_check_args.c ft_error.c ft_sort.c ft_utils.c is_sorted.c \
-			push.c reverse.c rotate.c swap.c main.c ft_utils_lst ft_simplify.c
+			push.c reverse.c rotate.c swap.c main.c ft_utils_lst.c ft_simplify.c
 
 LIBFT	=	libft/libft.a
 

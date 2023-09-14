@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:57:59 by vterroso          #+#    #+#             */
-/*   Updated: 2023/09/14 12:58:13 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/09/14 14:48:59 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	ft_isrepeat(int i, long tmp, char **args)
 	return (0);
 }
 
-git addstatic int	ft_isnum(char *str)
+static int	ft_isnum(char *str)
 {
 	int	i;
 
