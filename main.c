@@ -6,22 +6,17 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:58:47 by vterroso          #+#    #+#             */
-/*   Updated: 2023/09/13 19:13:48 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/09/18 16:09:13 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void leaks(void){
-	system("leaks -q push_swap");
-}
-
 int	main(int ac, char **av)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	
-	atexit(leaks);
+
 	if (ac < 2)
 		return (0);
 	ft_check_args(ac, av);
